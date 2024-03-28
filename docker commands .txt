@@ -1,0 +1,29 @@
+docker image ls     		             -> image larni ro'yhatini ko'rsatadi
+docker image ls -a          	         -> hamma image larni ko'rsatish 
+docker image pull <image-name:tag>       -> image ni yuklab olish
+docker image rm hello-world	             -> image ni o'chirish
+docker image rm -f hello-world           -> image container da ishlayotgan bo'lsa ham o'chirish
+docker image prune		                 -> barcha ishlamayotgan image larni o'chirish
+docker image build		                 -> image qurish
+docker image build -t <image-name:image-version> <docker-file-path> -> image qurish. misol: docker image build -t mynginx:v1.0 .
+
+docker container ls     		                         -> container larni ro'yhatini ko'rsatadi
+docker container run <image-name>                        -> image ni container qilib ishlatish 
+docker container run -p 80:80 myingnx:v1.0               -> image ni container orqali portlarini sozlab ishlatish
+docker container run -itd -p 80:80 mynginx:v1.0          ->  detach uslubida ishlatish
+docker container run -d -p 80:80 -p 443:443 myingnx:v1.0 -> bir nechta portlarni ishga tushirish
+docker container run -d -p 1-10:1-10 myingnx:v1.0        -> portlar oralig'ini ishga tushirish
+docker container run -d -p 82:80 -v g:\temp:/usr/share/nginx/html/ mynginx:v1.0  -> docker ga value berish (men ishlatib bilmadim)
+
+docker system df           -> docker system malumotlarini chiqarish
+
+docker network ls -> tarmoq malumotlarini ko'rish
+docker network inspect <network-name> -> tarmoq malumoti bilan to'liq tanishish
+
+==================================================================================================
+Dockerfile dagi kodlar
+==================================================================================================
+FROM debian:buster-slim   -> debian serverning buster-slim tagni ishlatadi, uni import qilib olib keladi
+RUN <command>             -> buyruq
+CMD <command>             -> cmd buyruq
+COPY <qayerdan> <qayerga> -> nusxa olish
