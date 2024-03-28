@@ -1,2 +1,0 @@
-git init  -> gitni ishga tushirish
-git add <files> -> git ga fayllar qo'shish
